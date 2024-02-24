@@ -1,6 +1,12 @@
-import { Column, CreateDateColumn, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { TransactionType } from '../enums/transaction-type.enum';
 
+@Entity()
 export class Transaction {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -17,6 +23,9 @@ export class Transaction {
   @Column()
   amount: number;
 
-  @CreateDateColumn({ type: 'timestamptz' })
+  @Column()
+  time: number;
+
+  @CreateDateColumn()
   created?: Date;
 }

@@ -12,9 +12,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     TypeOrmModule.forRootAsync({
       useFactory: () => ({
         type: 'sqlite',
-        database: 'addiction-bet',
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        database: 'db/sql',
         synchronize: true,
+        entities: [__dirname + '/app/**/*.entity{.ts,.js}'],
       }),
     }),
   ],

@@ -13,9 +13,7 @@ export class UsersService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-    const createdUser = await this.usersRepository.save(createUserDto);
-    console.log(createdUser, 'createdUser');
-    return createdUser;
+    return this.usersRepository.save(createUserDto);
   }
 
   findAll() {
@@ -23,14 +21,10 @@ export class UsersService {
   }
 
   async findOne(id: string) {
-    const user = await this.usersRepository.findOneBy({ id });
-    console.log(user, 'user');
-    return user;
+    return this.usersRepository.findOneBy({ id });
   }
 
   async findOneByWalletAddress(walletAddress: string) {
-    const user = await this.usersRepository.findOneBy({ walletAddress });
-    console.log(user, 'user');
-    return user;
+    return this.usersRepository.findOneBy({ walletAddress });
   }
 }

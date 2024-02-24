@@ -13,9 +13,9 @@ export class User {
   @Column()
   walletAddress: string;
 
-  @Column()
+  @Column({ nullable: true })
   name?: string;
 
-  @CreateDateColumn({ type: 'timestamptz' })
+  @CreateDateColumn()
   created?: Date;
 }
